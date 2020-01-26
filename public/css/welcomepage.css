@@ -1,0 +1,307 @@
+/* Reset background of inputs */
+input:-webkit-autofill {
+  -webkit-box-shadow:200px 200px 100px white inset; 
+  box-shadow:200px 200px 100px white inset;
+}
+
+/* helper classes */
+.logo-name {
+    color: #e3342f;
+    font-family: Pacifico;
+}
+.no-selection {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.p-absolute {position: absolute}
+
+/* Animations */
+
+@-webkit-keyframes ball-jump {
+    0%, 20%, 40%, 60%, 70%, 80%, 90%, 100% {
+        transform: translateY(0)
+    }
+    10% {
+        transform: translateY(-25px)
+    }
+    30% {
+        transform: translateY(-15px)
+    }
+    50% {
+        transform: translateY(-5px)
+    }
+}
+@-moz-keyframes ball-jump {
+    0%, 20%, 40%, 60%, 70%, 80%, 90%, 100% {
+        transform: translateY(0)
+    }
+    10% {
+        transform: translateY(-25px)
+    }
+    30% {
+        transform: translateY(-15px)
+    }
+    50% {
+        transform: translateY(-5px)
+    }
+}
+@-o-keyframes ball-jump {
+    0%, 20%, 40%, 60%, 70%, 80%, 90%, 100% {
+        transform: translateY(0)
+    }
+    10% {
+        transform: translateY(-25px)
+    }
+    30% {
+        transform: translateY(-15px)
+    }
+    50% {
+        transform: translateY(-5px)
+    }
+}
+@keyframes ball-jump {
+    0%, 20%, 40%, 60%, 70%, 80%, 90%, 100% {
+        transform: translateY(0)
+    }
+    10% {
+        transform: translateY(-25px)
+    }
+    30% {
+        transform: translateY(-15px)
+    }
+    50% {
+        transform: translateY(-5px)
+    }
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 9999;
+}
+header > nav {
+    padding: 15px 0;
+}
+header > nav * {cursor: default;}
+header > nav .row {align-items: center}
+/* The left of navbar */
+header > nav .logo div{
+    display: flex;
+    align-items: center;
+}
+header > nav .logo.mobile div {justify-content: center;}
+
+header > nav .logo > div > img {
+    width: 50px;
+    height: 50px;
+}
+
+header > nav .logo div > span {
+    font-size: 30px;
+    margin-left: 7px;
+}
+
+/* End of left of navbar */
+
+/* Right of navbar */
+#nav-right-section, #nav-right-section > .btn{ color: #eee; }
+#nav-right-section > #or-nav { padding: 0 10px; }
+#nav-right-section > .signup-btn { border-color: #e3342f; }
+/* End of right of navbar */
+
+/* End of header */
+
+/** Cover **/
+#cover {
+    overflow: hidden;
+    position: relative;
+}
+#cover * {cursor: default}
+#cover > img {
+    width: 100%;
+    height: 100%;
+}
+#cover #cover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    color: #eee;
+    font-family: Ubuntu;
+}
+#cover #cover-content > div > h2 {
+    font-size: 50px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+#cover #cover-content > div > div.disc {
+    font-size: 20px;
+    color: #ccc;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+/* Scroll button */
+#scroll-btn-container
+{
+    bottom: 50px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+#scroll-btn-container > #scroll-btn {
+    background-color: #e3342f;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: ball-jump 3s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+#scroll-btn-container > #scroll-btn > i {
+    margin-top: 10px;
+    cursor: pointer;
+}
+/* End scroll button */
+
+/** End cover **/
+
+/** Login screen **/
+#login-screen-container {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    color: #eee;
+    z-index: 99999;
+}
+#login-screen {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    color: #555;
+    padding: 30px 70px;
+    border-radius: 20px;
+    width: 50%;
+    max-width: 555px;
+    min-width: 500px;
+}
+
+#login-screen h3 {
+    color: #ff0011;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 50px;
+    letter-spacing: 8px;
+    font-size: 40px;
+}
+
+#login-screen > form > div.input-div { position: relative; }
+
+#login-screen > form > div.input-div:first-of-type { margin-bottom: 20px }
+
+#login-screen > form > div > input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    padding: 3px 30px 10px 30px;
+    outline: none;
+    transition: .3s border ease;
+}
+
+#login-screen > form > div.input-div > i {
+    position: absolute;
+    font-size: 18px;
+    top: 3px;
+    left: 5px;
+    color: #777;
+}
+
+#login-screen > form > div.input-div > i#show-password {
+    right: 0;
+    left: auto;
+    color: #aaa;
+    cursor: pointer;
+}
+
+#login-screen > form > div.input-div > i#show-password.active { color: #333; }
+
+#login-screen > form > div > input:focus {
+    border-color: #f00;
+    border-width: 1px;
+}
+
+#login-screen > form > div > input::placeholder {
+    opacity: 1;
+    transition: opacity ease .3s;
+}
+
+#login-screen > form > div > input:focus::placeholder { opacity: 0 }
+
+#login-screen > form > div > input:focus ~ i { color: #f00 }
+
+#login-screen > form > div > a {
+    opacity: 0.8;
+    color: #f00;
+    display: inline-block;
+    margin-bottom: 24px;
+    margin-top: 3px;
+}
+
+#login-screen > form > div > button[type="submit"] {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+#login-screen > form > fieldset.separetor { border-top: 1px solid #aaa !important; margin-bottom: 5px; }
+
+#login-screen > form > fieldset.separetor > legend {
+    width: auto !important;
+    padding: 0 10px;
+    font-size: 15px;
+    color: #aaa;
+}
+/*  #3b5998 */
+#login-screen > form > div > .btn.social-login {
+    color: #fff;
+    background-color: #aaa;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+#login-screen > form > div > .btn.social-login#facebook-btn { background-color: #3b5998 }
+
+#login-screen > form > div > .btn.social-login#soundcloud-btn { background-color: #ff7700 }
+
+#login-screen > form > div > .btn.social-login#google-btn { background-color: #fff; }
+
+#login-screen > #close-login-btn {
+    position: absolute;
+    top:-30px;
+    right:-20px;
+    color: #fff;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+/** End of login screen **/
