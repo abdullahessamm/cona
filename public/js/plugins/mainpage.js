@@ -1,3 +1,5 @@
+/**********  DESKTOP  ************/
+
 /* Helper functions */
 function nextScreenLinear() { //Go to next screen (scroll down)
     let scrolled = 1,
@@ -10,7 +12,7 @@ function nextScreenLinear() { //Go to next screen (scroll down)
 }
 /* End of helper functions */
 
-let desktopElemens = {
+let desktopElements = {
     scrollDownBtn: document.querySelector('#scroll-btn-container'),
     //navbar buttons
     loginBtn: document.querySelector('header .login-btn'),
@@ -25,33 +27,55 @@ let desktopElemens = {
     closeBtn: document.querySelector('#close-login-btn'),
 };
 
-desktopElemens.scrollDownBtn.addEventListener('click', nextScreenLinear); //Scroll button click event
+desktopElements.scrollDownBtn.addEventListener('click', nextScreenLinear); //Scroll button click event
 
 //// Desktop navbar buttons ...
 
-desktopElemens.loginBtn.addEventListener('click', () => document.body.appendChild(desktopElemens.loginScreenContainer));
-desktopElemens.signupBtn.addEventListener('click', () => window.location.href = '/signup');
+desktopElements.loginBtn.addEventListener('click', () => document.body.appendChild(desktopElements.loginScreenContainer));
+desktopElements.signupBtn.addEventListener('click', () => window.location.href = '/signup');
 
 //// End of Desktop navbar buttons ...
 
 //// login form ...
-desktopElemens.loginScreenContainer.remove();
+desktopElements.loginScreenContainer.remove();
 
 // show password function
-desktopElemens.showPasswordBtn.addEventListener('mousedown', function() {
-	desktopElemens.passwordField.setAttribute('type', 'text');
+desktopElements.showPasswordBtn.addEventListener('mousedown', function() {
+	desktopElements.passwordField.setAttribute('type', 'text');
 	this.classList.add('active');
 });
-desktopElemens.showPasswordBtn.addEventListener('mouseup', function() {
-	desktopElemens.passwordField.setAttribute('type', 'password');
+desktopElements.showPasswordBtn.addEventListener('mouseup', function() {
+	desktopElements.passwordField.setAttribute('type', 'password');
 	this.classList.remove('active');
-	desktopElemens.passwordField.focus();
+	desktopElements.passwordField.focus();
 });
 
 //close form function
-desktopElemens.closeBtn.addEventListener('click', () => desktopElemens.loginScreenContainer.remove());
+desktopElements.closeBtn.addEventListener('click', () => desktopElements.loginScreenContainer.remove());
 
 //social login
 // Code...
 
 //// end of login form...
+
+
+/********** END OF DESKTOP ************/
+
+
+/**********  PHONE ************/
+
+let mobileElements = {
+    mobileMenuBtn: document.querySelector('#mobile-menu-btn'),
+    mobileMenu: document.querySelector('#mobile-menu'),
+};
+
+let functions = {
+    openMenu: () => {
+        mobileElements.mobileMenu.classList.add('open-with-animation');
+    },
+};
+
+mobileElements.mobileMenuBtn.ontouchend !== undefined ? mobileElements.mobileMenuBtn.ontouchend = functions.openMenu : mobileElements.mobileMenuBtn.onclick = functions.openMenu;
+
+/**********  END OF PHONE ************/
+

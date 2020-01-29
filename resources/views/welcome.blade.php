@@ -20,29 +20,46 @@
         <nav>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-6 col-12">
-                        <div class="d-none d-sm-block logo">
+                    <div class="col-6">
+                        <div class="d-none d-md-block logo">
                             <div>
                                 <img src="{{asset('img/logo.png')}}" alt="Logo" class="no-selection">
                                 <span class="logo-name no-selection"> Cona </span>
                             </div>
                         </div>
-                        <div class="d-block d-sm-none logo mobile">
+                        <div class="d-block d-md-none logo mobile">
                             <div>
                                 <img src="{{asset('img/logo.png')}}" alt="Logo" class="no-selection">
                                 <span class="logo-name" class="no-selection"> Cona </span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 d-none d-sm-block text-right" id="nav-right-section">
-                        <div class="btn btn-danger login-btn"> Login </div>
-                        <span id="or-nav" class="no-selection"> OR </span>
-                        <div class="btn signup-btn"> Sign up for free </div>
+                    <div class="col-6 text-right" id="nav-right-section">
+                        <!-- Desktop navbar right icons -->
+                        <div class="btn btn-danger login-btn d-none d-md-inline"> Login </div>
+                        <span id="or-nav" class="no-selection d-none d-md-inline"> OR </span>
+                        <div class="btn signup-btn d-none d-md-inline"> Sign up for free </div>
+                        <!-- Mobile navbar right icon -->
+                        <div id="mobile-menu-btn" class="d-block d-md-none"> <i class="fas fa-bars"></i> </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
+    <!-- Mobile navigation menu -->
+    <section id="mobile-menu" class="d-none">
+        <div>
+            <span id="close-menu"> <i class="fas fa-arrow-right"></i> </span>
+        </div>
+        <ul>
+            <li id="home" class="active"> <i class="fas fa-home"></i> <a href="#"> Home </a> </li>
+            <li id="services"> <i class="fas fa-hand-holding-heart"></i> <a href="#"> Services </a> </li>
+            <li id="whats-new"> <i class="fas fa-question-circle"></i> <a href="#"> What's new? </a> </li>
+            <li id="about-developer"> <i class="fas fa-address-card"></i> <a href="#"> About developer </a> </li>
+            <li id="contact-us"> <i class="fas fa-envelope"></i> <a href="#"> Contact us </a> </li>
+        </ul>
+    </section>
+    <!-- Cover elements -->
     <div id="cover">
         <img src="{{asset('img/cover2.jpg')}}" alt="Cover" class="no-selection">
         <div id="cover-content">
@@ -50,11 +67,11 @@
                 <h2 id="welcome-text" class="text-center no-selection"> Welcome to <span class="logo-name no-selection"> Cona </span> </h2>
                 <div class="text-center no-selection disc">
                     Wanna connect to your family and friends? <br class="no-selection">
-                    This app provide this serve with different style 
+                    This app provide this service with different style 
                 </div>
             </div>
             <div class="h-center p-absolute" id="scroll-btn-container">
-                <div id="scroll-btn" class="text-center">
+                <div id="scroll-btn" class="text-center d-none d-md-block">
                     <i class="fas fa-arrow-down"></i>
                 </div>
             </div>

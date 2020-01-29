@@ -1,3 +1,64 @@
+/* Animations */
+	
+@keyframes slide-open {
+	from {
+		transform: translateX(100%);
+	} to {
+		transform: translateX(0%);
+	}
+}
+
+/* End of animations */
+
+header > nav .logo.mobile img {
+	width: 30px;
+	height: 30px;
+}
+header > nav .logo.mobile .logo-name {
+	font-size: 25px;
+}
+
+/* menu-btn here */
+#mobile-menu {
+	position: absolute;
+	top:0;
+	right:0;
+	height: 100%;
+	z-index: 9999999999;
+	background-color: #222;
+	padding: 20px;
+	padding-right: 40px;
+}
+
+#mobile-menu.open-with-animation {
+	display: block !important;
+	animation: 0.4s slide-open ease-in-out;
+}
+
+#mobile-menu #close-menu {
+	color: #f00;
+	display: inline-block;
+}
+
+#mobile-menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 20px;
+}
+
+#mobile-menu ul > li {
+	padding: 5px 0;
+	font-size: 15px;
+	color: #fff;
+}
+
+#mobile-menu ul > li.active {
+	border-bottom: 1px solid #f00;
+}
+
+#mobile-menu ul > li a {color: #fff; text-decoration: none; margin-left:10px}
+
 @media (max-width: 575px)
 {
     
